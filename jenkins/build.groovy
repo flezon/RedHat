@@ -1,3 +1,3 @@
-nodo {
+node {
   echo ' El oleoducto comenzó '
 }
