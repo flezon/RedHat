@@ -27,8 +27,8 @@ node {
     sh "mvn versions:set -DnewVersion=${branchVersion}"
   }
 
-  stage ('Java Build') {
+  /*stage ('Java Build') {
     // build .war package
     sh 'mvn clean package -U'
-  }
+  }*/
 }
