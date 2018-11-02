@@ -17,7 +17,7 @@ node {
       bat "${mvnHome}/bin/mvn clean install" 
       
    stage 'Analysis'
-     def mvnHome = tool 'mvn-default'
+     def mvnHome = tool 'git'
 
      sh "${mvnHome}/bin/mvn -batch-mode -V -U -e checkstyle:checkstyle findbugs:findbugs"
 
