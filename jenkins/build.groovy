@@ -11,7 +11,7 @@ node {
 
    // Mark the code build 'stage'.... 
 
-   //stage 'Build' 
+   stage 'Build' 
 
    // Run the maven build 
 
