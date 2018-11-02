@@ -35,12 +35,13 @@ public class Utils {
 	}
 	
 	public static void screenshot(String descripcion) {
-		File scrFile = ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
+		System.out.println("screenshot");
+		/*File scrFile = ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
 		try {
 			FileUtils.copyFile(scrFile, new File("C:\\Users\\carlosquimbayo\\Documents\\Screenshots\\"+screenshotFolder+"\\"+descripcion+".png"));
 		} catch (IOException e) {
 			System.err.println("No se pudo tomar el pantallazo "+e.getMessage());
-		}
+		}*/
 	}
 	
 	public static void waitObject(String wb,int waitTime) {
