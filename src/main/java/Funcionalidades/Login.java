@@ -7,7 +7,6 @@ import java.util.Properties;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
-import general.CryptDecrypt;
 import general.Utils;
 
 public class Login {
@@ -40,7 +39,7 @@ public class Login {
         //toma pantallazo
         Utils.screenshot("Login");
         Utils.objeto(prop.getProperty("usuario")).sendKeys(config.getProperty("USUARIO"));
-        Utils.objeto(prop.getProperty("password")).sendKeys(CryptDecrypt.decrypt(config.getProperty("PASSWORD"), Utils.key));
+        Utils.objeto(prop.getProperty("password")).sendKeys(config.getProperty("PASSWORD"), Utils.key);
         Utils.objeto(prop.getProperty("btnEntrar")).click();
         Utils.screenshot("Finalizar login");
 	}

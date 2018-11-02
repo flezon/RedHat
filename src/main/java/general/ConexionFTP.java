@@ -34,7 +34,7 @@ public class ConexionFTP {
 		String host=config.getProperty("host");
 		int port=Integer.parseInt(config.getProperty("port"));
 		String username=config.getProperty("username");
-		String password=CryptDecrypt.decrypt(config.getProperty("password"), Utils.key);
+		String password=config.getProperty("password");
 		ftp = new FTPSClient();
         ftp.addProtocolCommandListener(new PrintCommandListener(new PrintWriter(System.out)));
         int reply;
