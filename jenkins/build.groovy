@@ -9,7 +9,7 @@ node {
     sh "git checkout ${caller.env.BRANCH_NAME}"
   }
 
-  stage ('Determine Branch Version') {
+  /*stage ('Determine Branch Version') {
     // add maven to path
     env.PATH = "${tool 'M3'}/bin:${env.PATH}"
 
@@ -25,10 +25,10 @@ node {
 
     // set branch SNAPSHOT version in pom.xml
     sh "mvn versions:set -DnewVersion=${branchVersion}"
-  }
+  }*/
 
-  stage ('Java Build') {
+  /*stage ('Java Build') {
     // build .war package
     sh 'mvn clean package -U'
-  }
+  }*/
 }
