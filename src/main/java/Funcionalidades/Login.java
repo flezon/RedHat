@@ -38,8 +38,8 @@ public class Login {
         Utils.waitObject(prop.getProperty("usuario"), 60);
         //toma pantallazo
         Utils.screenshot("Login");
-        Utils.objeto(prop.getProperty("usuario")).sendKeys(config.getProperty("USUARIO"));
-        Utils.objeto(prop.getProperty("password")).sendKeys(config.getProperty("PASSWORD"), Utils.key);
+        //Utils.objeto(prop.getProperty("usuario")).sendKeys(config.getProperty("USUARIO"));
+        //Utils.objeto(prop.getProperty("password")).sendKeys(config.getProperty("PASSWORD"), Utils.key);
         Utils.objeto(prop.getProperty("btnEntrar")).click();
         Utils.screenshot("Finalizar login");
 	}
