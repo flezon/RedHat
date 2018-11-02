@@ -2,7 +2,7 @@ node {
    // Mark the code checkout 'stage'.... 
    stage 'Checkout'
       // Get some code from a GitHub repository 
-      git url: 'https://g.com/flezon/RedHat.git'
+      git url: 'https://github.com/flezon/RedHat.git'
       // Get the maven tool. // ** NOithubTE: This 'M3' maven tool must be configured
       // ** in the global configuration. 
       def mvnHome = tool 'M3'
