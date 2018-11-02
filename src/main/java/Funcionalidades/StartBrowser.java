@@ -1,12 +1,6 @@
 package Funcionalidades;
 
-import java.math.BigInteger;
-import java.security.MessageDigest;
 
-
-import general.ConexionFTP;
-import general.CryptDecrypt;
-import general.SOAPWS;
 import general.Utils;
 
 
@@ -19,7 +13,6 @@ public class StartBrowser {
     }
 
 	public static void sendSoap() {
-		SOAPWS soap=new SOAPWS();
-		String resp=soap.sendRequest();
+		
 	}	
 }

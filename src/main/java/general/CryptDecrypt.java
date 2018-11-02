@@ -28,29 +28,29 @@ public class CryptDecrypt {
     private static final int DEFAULT_KEY_SIZE = 128;
 
 	public enum ALGORITHM {
-	// following algorithm is for encrypt and decrypt
-    AES("AES"),
-    DES("DES"),
-
-    // following algorithm is for message digest
-    MD2("MD2"),
-    MD5("MD5"),
-    SHA1("SHA-1"),
-    SHA256("SHA-256"),
-    SHA384("SHA-384"),
-    SHA512("SHA-512");
-
-    private final String text;
-
-    ALGORITHM(final String text) {
-        this.text = text;
-    }
-
-    @Override
-    public String toString() {
-        return text;
-    }
-}
+		// following algorithm is for encrypt and decrypt
+	    AES("AES"),
+	    DES("DES"),
+	
+	    // following algorithm is for message digest
+	    MD2("MD2"),
+	    MD5("MD5"),
+	    SHA1("SHA-1"),
+	    SHA256("SHA-256"),
+	    SHA384("SHA-384"),
+	    SHA512("SHA-512");
+	
+	    private final String text;
+	
+	    ALGORITHM(final String text) {
+	        this.text = text;
+	    }
+	
+	    @Override
+	    public String toString() {
+	        return text;
+	    }
+	}
 	
 	/**
 	 * encrypt content
@@ -185,6 +185,8 @@ public class CryptDecrypt {
 	            case DES:
 	                keySize = 56;
 	                break;
+			default:
+				break;
 	        }
 	        keyGenerator.init(keySize, secureRandom);
 	        SecretKey secretKey = keyGenerator.generateKey();
