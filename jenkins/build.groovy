@@ -16,16 +16,17 @@ node {
       // Run the maven build 
       bat "${mvnHome}/bin/mvn clean install" 
       
-   stage 'Artifactory configuration'
-        // Obtain an Artifactory server instance, defined in Jenkins --> Manage:
-        server = Artifactory.server SERVER_ID
+   stage 'Analysis'
+     def mvnHome = tool 'M3'
 
-        rtMaven = Artifactory.newMavenBuild()
-        rtMaven.tool = MAVEN_TOOL // Tool name from Jenkins configuration
-        rtMaven.deployer releaseRepo: 'libs-release-local', snapshotRepo: 'libs-snapshot-local', server: server
-        rtMaven.resolver releaseRepo: 'libs-release', snapshotRepo: 'libs-snapshot', server: server
-        rtMaven.deployer.deployArtifacts = false // Disable artifacts deployment during Maven run
+     sh "${mvnHome}/bin/mvn -batch-mode -V -U -e checkstyle:checkstyle findbugs:findbugs"
 
-        buildInfo = Artifactory.newBuildInfo()
-    
+     def checkstyle = scanForIssues tool: [$class: 'CheckStyle'], pattern: '**/target/checkstyle-result.xml'
+     publishIssues issues:[checkstyle]
+
+     def findbugs = scanForIssues tool: [$class: 'FindBugs'], pattern: '**/target/findbugsXml.xml'
+     publishIssues issues:[findbugs]
+
+     def maven = scanForIssues tool: [$class: 'MavenConsole']
+     publishIssues issues:[maven]
 }
