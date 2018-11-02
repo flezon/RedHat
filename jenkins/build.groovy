@@ -1,13 +1,13 @@
 node {
   def branchVersion = ""
 
-  /*stage ('Checkout') {
+  stage ('Checkout') {
     // checkout repository
     checkout scm
 
     // checkout input branch 
     sh "git checkout ${caller.env.BRANCH_NAME}"
-  }*/
+  }
 
   stage ('Determine Branch Version') {
     // add maven to path
