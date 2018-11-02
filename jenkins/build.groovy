@@ -17,8 +17,7 @@ node {
       bat "${mvnHome}/bin/mvn clean install" 
       
    stage 'Analysis'
-     def mvnHome = tool 'M3'
-
+   
      sh "${mvnHome}/bin/mvn -batch-mode -V -U -e checkstyle:checkstyle findbugs:findbugs"
 
      def checkstyle = scanForIssues tool: [$class: 'CheckStyle'], pattern: '**/target/checkstyle-result.xml'
