@@ -16,7 +16,7 @@ node {
       // Run the maven build 
       bat "${mvnHome}/bin/mvn clean install" 
       
-   stage 'Artifactory configuration')
+   stage 'Artifactory configuration'
         // Obtain an Artifactory server instance, defined in Jenkins --> Manage:
         server = Artifactory.server SERVER_ID
 
@@ -27,5 +27,5 @@ node {
         rtMaven.deployer.deployArtifacts = false // Disable artifacts deployment during Maven run
 
         buildInfo = Artifactory.newBuildInfo()
-    }
+    
 }
