@@ -1,34 +1,24 @@
 node {
-  def branchVersion = ""
+ 
+   // Mark the code checkout 'stage'.... 
 
-  stage ('Checkout') {
-    // checkout repository
-    checkout scm
+   stage 'Checkout' 
 
-    // checkout input branch 
-    //sh "git checkout ${caller.env.BRANCH_NAME}"
-  }
+   // Get some code from a GitHub repository 
 
-  stage ('Determine Branch Version') {
-    // add maven to path
-    env.PATH = "${tool 'M3'}/bin:${env.PATH}"
+   git url: 'https://github.com/flezon/RedHat.git'
 
-    // determine version in pom.xml
-    def pomVersion = sh(script: 'mvn -q -Dexec.executable=\'echo\' -Dexec.args=\'${project.version}\' --non-recursive exec:exec', returnStdout: true).trim()
+   // Get the maven tool. // ** NOTE: This 'M3' maven tool must be configured
+   // ** in the global configuration. 
 
-    // compute proper branch SNAPSHOT version
-    pomVersion = pomVersion.replaceAll(/-SNAPSHOT/, "") 
-    branchVersion = env.BRANCH_NAME
-    branchVersion = branchVersion.replaceAll(/origin\//, "") 
-    branchVersion = branchVersion.replaceAll(/\W/, "-")
-    branchVersion = "${pomVersion}-${branchVersion}-SNAPSHOT"
+   def mvnHome = tool 'M3'
 
-    // set branch SNAPSHOT version in pom.xml
-    sh "mvn versions:set -DnewVersion=${branchVersion}"
-  }
+   // Mark the code build 'stage'.... 
 
-  /*stage ('Java Build') {
-    // build .war package
-    sh 'mvn clean package -U'
-  }*/
+   stage 'Build' 
+
+   // Run the maven build 
+
+  sh "${mvnHome}/bin/mvn clean install" 
+
 }
