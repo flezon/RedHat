@@ -6,7 +6,7 @@ node {
     checkout scm
 
     // checkout input branch 
-    sh "git checkout ${caller.env.BRANCH_NAME}"
+    //sh "git checkout ${caller.env.BRANCH_NAME}"
   }
 
   /*stage ('Determine Branch Version') {
