@@ -58,7 +58,7 @@ public class CheckSAM {
 		Utils.waitObject(prop.getProperty("estado"), 60);
 		Utils.objeto(prop.getProperty("estado")).click();
 		Utils.objeto(prop.getProperty("estadoAbierto")).click();
-		Utils.objeto(prop.getProperty("variableSpace")).sendKeys("PromPonPRec");
+		//Utils.objeto(prop.getProperty("variableSpace")).sendKeys("PromPonPRec");
 		Utils.objeto(prop.getProperty("buscar")).click();
 		//Utils.waitObject(prop.getProperty("txtVariables"), 60);
 		//String nombreVariables=Utils.objeto(prop.getProperty("txtVariables")).getText();
