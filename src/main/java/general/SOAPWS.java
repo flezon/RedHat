@@ -11,7 +11,7 @@ public class SOAPWS {
 	String soapEndpointUrl;
     String soapAction;
     Properties config;
-	String configFile="C:\\Users\\ivanbermudez\\eclipse-workspace\\RedHat\\src\\main\\java\\configuracion\\configuracionSOAP.properties";
+	String configFile="C:\\Users\\carlosquimbayo\\Documents\\RedHat\\src\\main\\java\\configuracion\\configuracionSOAP.properties";
 	public SOAPWS() {
 		config = new Properties();
 		InputStream input;

@@ -14,7 +14,7 @@ public class CheckSAM {
 	Properties prop;
 	WebDriver driver;
 	WebDriverWait wait;
-	String configFile="C:\\Users\\ivanbermudez\\eclipse-workspace\\RedHat\\src\\main\\java\\propiedades\\CheckSAM.properties";
+	String configFile="C:\\Users\\carlosquimbayo\\Documents\\RedHat\\src\\main\\java\\propiedades\\CheckSAM.properties";
 	
 	public CheckSAM () {
 		this.driver=Utils.driver;

@@ -14,8 +14,8 @@ public class Login {
 	Properties config;
 	WebDriver driver;
 	WebDriverWait wait;
-	String propertyFile="C:\\Users\\ivanbermudez\\eclipse-workspace\\RedHat\\src\\main\\java\\propiedades\\login.properties";
-	String configFile="C:\\Users\\ivanbermudez\\eclipse-workspace\\RedHat\\src\\main\\java\\configuracion\\configuracionLogin.properties";
+	String propertyFile="C:\\Users\\carlosquimbayo\\Documents\\RedHat\\src\\main\\java\\propiedades\\login.properties";
+	String configFile="C:\\Users\\carlosquimbayo\\Documents\\RedHat\\src\\main\\java\\configuracion\\configuracionLogin.properties";
 	public Login() {
 		this.driver=Utils.driver;
 		this.wait=Utils.wait;

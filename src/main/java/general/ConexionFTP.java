@@ -18,7 +18,7 @@ import org.apache.commons.net.ftp.FTPSClient;
 public class ConexionFTP {
 	FTPSClient ftp = null;
 	Properties config;
-	String configFile="C:\\Users\\ivanbermudez\\eclipse-workspace\\RedHat\\src\\main\\java\\configuracion\\configuracionFTP.properties";
+	String configFile="C:\\Users\\carlosquimbayo\\Documents\\RedHat\\src\\main\\java\\configuracion\\configuracionFTP.properties";
 	public ConexionFTP() {
 		config = new Properties();
 		try {
